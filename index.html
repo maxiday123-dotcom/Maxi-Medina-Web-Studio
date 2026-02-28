@@ -313,6 +313,7 @@
     <p>Email: <a href="mailto:Maxi2121@live.com.ar">Maxi2121@live.com.ar</a></p>
     <p>WhatsApp: <a href="https://wa.me/541140304782">+54 11 4030 4782</a></p>
     <form>
+	  <input type="text" id="asunto" name="asunto" placeholder="Asunto" readonly>
       <input type="text" placeholder="Tu nombre" required>
       <input type="email" placeholder="Tu email" required>
       <textarea placeholder="Tu mensaje"></textarea>
@@ -324,9 +325,15 @@
   <footer>
     <p>© 2026 Maxi Medina | Web Studio</p>
   </footer>
-
+<script>
+function seleccionarServicio(servicio) {
+  document.getElementById("asunto").value = 
+    "Quiero hablarte sobre este servicio: " + servicio;
+}
+</script>
 </body>
 </html>
+
 
 
 
