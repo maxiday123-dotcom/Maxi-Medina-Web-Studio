@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maxi Medina | Web Studio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+  <style>
+    /* Paleta de colores */
+    :root {
+      --purpura: #6A0DAD;
+      --lila: #C9A3E6;
+      --gris-grafito: #1F1F1F;
+      --gris-claro: #F2F2F2;
+      --blanco: #FFFFFF;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: var(--gris-claro);
+      color: var(--gris-grafito);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Montserrat', sans-serif;
+      color: var(--purpura);
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, var(--purpura), var(--lila));
+      color: var(--blanco);
+      text-align: center;
+      padding: 70px 20px;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    header img {
+      width: 450px; /* Logo más grande */
+      max-width: 75%;
+      margin-bottom: 5px;
+      animation: fadeInDown 1.5s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+      animation: fadeInUp 1.5s ease-in-out;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      animation: fadeInUp 2s ease-in-out;
+    }
+
+    header a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background: var(--blanco);
+      color: var(--purpura);
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    header a:hover {
+      background: var(--gris-grafito);
+      color: var(--blanco);
+      transform: scale(1.05);
+    }
+
+    section {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    #servicios ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    #servicios li {
+      background: var(--blanco);
+      margin: 10px 0;
+      padding: 15px;
+      border-left: 5px solid var(--purpura);
+      transition: all 0.3s ease;
+    }
+
+    #servicios li:hover {
+      background: var(--lila);
+      color: var(--blanco);
+    }
+
+    #clientes {
+      text-align: center;
+    }
+
+     
+	.proyectos-grid {
+  	display: grid;
+  	grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  	gap: 30px;
+  	margin-top: 40px;
+     }
+
+	.proyecto-card {
+  	background: var(--blanco);
+  	border-radius: 12px;
+  	padding: 20px;
+  	box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  	text-align: center;
+  	transition: transform 0.3s ease, box-shadow 0.3s ease;
+	}
+
+	.proyecto-card:hover {
+  	transform: translateY(-8px);
+  	box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+	}
+
+	.proyecto-card img {
+  	max-width: 100%;
+  	border-radius: 8px;
+  	margin-bottom: 15px;
+	}
+
+	.btn-proyecto {
+  	display: inline-block;
+  	margin-top: 10px;
+  	padding: 10px 20px;
+  	background: var(--purpura);
+  	color: var(--blanco);
+  	text-decoration: none;
+  	border-radius: 6px;
+  	font-weight: 600;
+  	transition: background 0.3s ease, transform 0.3s ease;
+	}
+
+	.btn-proyecto:hover {
+  	background: var(--lila);
+  	transform: scale(1.05);
+	}
+    }
+
+    #clientes img {
+      max-width: 180px; /* antes 250px */
+      margin: 5px;      /* menos margen alrededor */
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    #clientes img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, textarea, button {
+      padding: 12px;
+      border: 1px solid var(--gris-grafito);
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    button {
+      background: var(--purpura);
+      color: var(--blanco);
+      border: none;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    button:hover {
+      background: var(--lila);
+      transform: scale(1.05);
+    }
+
+    footer {
+      background: var(--gris-grafito);
+      color: var(--blanco);
+      text-align: center;
+      padding: 20px;
+    }
+
+    /* Animaciones */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 { font-size: 2rem; }
+      .clientes-grid { flex-direction: column; }
+      #clientes img { max-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header>
+    <img src="img/Logo Tra.png" alt="Logo Maxi Medina Web Studio">
+    <h1>Webs profesionales que convierten visitantes en clientes reales</h1>
+    <p>Diseño y desarrollo web estratégico para emprendedores y empresas.</p>
+    <a href="#contacto">Quiero mi web</a>
+    <a href="https://wa.me/541140304782">Hablemos por WhatsApp</a>
+  </header>
+
+  <!-- SOBRE MI -->
+  <section id="sobre-mi">
+    <h2>Maxi Medina | Web Studio</h2>
+    <p>Somos un estudio digital especializado en diseño y desarrollo web estratégico. 
+    Cada web debe generar confianza, transmitir profesionalismo y convertir visitas en clientes reales.</p>
+    <p><strong>Misión:</strong> Ayudar a emprendedores, profesionales y empresas a dar vida digital a sus proyectos.</p>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <h2>Servicios</h2>
+    <ul>
+      <li><strong>Landing Pages:</strong> páginas optimizadas para captar leads y vender.</li>
+      <li><strong>Webs Institucionales:</strong> sitios que transmiten credibilidad.</li>
+      <li><strong>Tiendas Online:</strong> e-commerce con pagos integrados.</li>
+      <li><strong>Mantenimiento:</strong> actualización y seguridad continua.</li>
+    </ul>
+  </section>
+
+  <!-- PROYECTOS DESTACADOS -->
+<section id="clientes">
+  <h2>Proyectos Destacados</h2>
+  <p style="text-align:center; max-width:700px; margin:auto;">
+    Algunos proyectos desarrollados para marcas que confiaron en nuestro estudio.
+  </p>
+
+  <div class="proyectos-grid">
+
+    <div class="proyecto-card">
+      <img src="img/aurora fitnes.png" alt="Aurora Fitness">
+      <h3>Aurora Fitness</h3>
+      <p>Landing page para gimnasio premium con sistema de reservas online y captación de leads.</p>
+      <a href="#" class="btn-proyecto">Ver proyecto</a>
+    </div>
+
+    <div class="proyecto-card">
+      <img src="img/del su inmobiliaria.png" alt="Del Sur Inmobiliaria">
+      <h3>Del Sur Inmobiliaria</h3>
+      <p>Sitio institucional con catálogo dinámico de propiedades y formulario de consultas.</p>
+      <a href="#" class="btn-proyecto">Ver proyecto</a>
+    </div>
+
+    <div class="proyecto-card">
+      <img src="img/nova marketing.png" alt="Nova Marketing">
+      <h3>Nova Marketing</h3>
+      <p>Web corporativa moderna con estrategia SEO y estructura enfocada en conversión.</p>
+      <a href="#" class="btn-proyecto">Ver proyecto</a>
+    </div>
+
+  </div>
+</section>
+
+  <!-- PROCESO -->
+  <section id="proceso">
+    <h2>Nuestro proceso</h2>
+    <ol>
+      <li>Reunión inicial</li>
+      <li>Diseño y desarrollo</li>
+      <li>Publicación y soporte</li>
+    </ol>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <h2>Contacto</h2>
+    <p>¿Querés comunicarte conmigo? Estoy para ayudarte.</p>
+    <p>Email: <a href="mailto:Maxi2121@live.com.ar">Maxi2121@live.com.ar</a></p>
+    <p>WhatsApp: <a href="https://wa.me/541140304782">+54 11 4030 4782</a></p>
+    <form>
+      <input type="text" placeholder="Tu nombre" required>
+      <input type="email" placeholder="Tu email" required>
+      <textarea placeholder="Tu mensaje"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Maxi Medina | Web Studio</p>
+  </footer>
+
+</body>
+</html>
